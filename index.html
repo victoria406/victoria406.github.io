@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Web-Design CSCI331 Final Project</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* Global styling */
+    html, body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-      color: #333;
+      overflow: hidden; /* Prevent scrollbars and extra space */
+      font-family: Arial, sans-serif;
+      min-height: 100vh; /* Ensure the layout spans the viewport height */
     }
 
+    /* Background gradient */
+    body {
+      background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+      color: #333;
+      display: flex;
+      flex-direction: column; /* Flexbox layout */
+    }
+
+    /* Navbar styling */
     .navbar {
       display: flex;
       justify-content: center;
@@ -22,8 +32,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      flex-shrink: 0; /* Navbar stays fixed */
     }
 
+    /* Tabs styling */
     .tab {
       padding: 10px 20px;
       margin: 0 5px;
@@ -41,29 +53,36 @@
       transform: scale(1.1);
     }
 
+    /* Hero section styling */
     .hero {
       text-align: center;
-      padding: 100px 20px;
+      padding: 50px 20px; /* Adjust padding to prevent extra spacing */
       color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      flex-grow: 1; /* Make the hero fill the remaining space */
     }
 
     .hero img {
-      max-width: 300px;
-      margin-top: 20px;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto 0 auto;
+      display: block;
       border-radius: 15px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     }
 
+    /* Iframe for other tabs */
     iframe {
       width: 100%;
-      height: 80vh;
+      height: calc(100vh - 80px); /* Adjust height dynamically based on navbar */
       border: none;
       display: none;
+      flex-grow: 1;
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <div class="navbar">
     <div class="tab" onclick="switchTab('home')">Home</div>
     <div class="tab" onclick="switchTab('finalAnimation331/index.html')">Victoria</div>
@@ -73,15 +92,18 @@
     <div class="tab" onclick="switchTab('csci331usingwebanimation.pdf')">Slides</div>
   </div>
 
+  <!-- Hero section -->
   <div id="hero-section" class="hero">
     <h1>CSCI331 Web Animation API Presentation!</h1>
     <p>By Victoria White, David Oliver, Riggs Gorby, Dylan Rasdum</p>
     <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2F736x%2F20%2F61%2F8c%2F20618cc8dfecf917ce4a3c8baeef2421.jpg&f=1&nofb=1&ipt=ff87ae28f9a6dcc9a24c61751b0ab9ac77f070dfff25d276a90efb6709e2f6bd&ipo=images" alt="Project Image">
   </div>
 
+  <!-- Content iframe -->
   <iframe id="content"></iframe>
 
   <script>
+    // Function to switch tabs
     function switchTab(path) {
       const iframe = document.getElementById('content');
       const heroSection = document.getElementById('hero-section');
