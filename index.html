@@ -32,7 +32,7 @@
     <div class="tab" onclick="switchTab('finalAnimation331_Dylan/index.html')">Dylan</div>
     <div class="tab" onclick="switchTab('David/index.html')">David</div>
     <div class="tab" onclick="switchTab('Riggs/index.html')">Riggs</div>
-    <div class="tab" onclick="switchTab('slides')">Slides</div>
+    <div class="tab" onclick="switchTab('csci331usingwebanimation.pdf')">Slides</div>
   </div>
   <iframe id="content" src=""></iframe>
 
@@ -40,12 +40,8 @@
     function switchTab(path) {
       const iframe = document.getElementById('content');
       if (path === 'home') {
-        iframe.src = '';
         iframe.style.display = 'none';
-        document.body.innerHTML += '<h1 style="text-align: center; margin-top: 50px;">Welcome to the Multi-Repo Project!</h1>';
-      } else if (path === 'slides') {
-        iframe.style.display = 'block';
-        iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vR1234YOURSLIDEID123/embed?start=false&loop=false&delayms=3000";
+        document.body.innerHTML += '<h1 style="text-align: center; margin-top: 50px;">Web Animation API Presentation!</h1>';
       } else {
         iframe.style.display = 'block';
         iframe.src = path;
