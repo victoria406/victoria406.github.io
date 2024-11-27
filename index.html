@@ -13,6 +13,7 @@
       background-color: #ddd;
       cursor: pointer;
       border-radius: 5px;
+      transition: background-color 0.3s;
     }
     .tab:hover {
       background-color: #ccc;
@@ -26,17 +27,32 @@
 </head>
 <body>
   <div>
-    <div class="tab" onclick="switchTab('finalAnimation331\\index.html')">Victoria</div>
-    <div class="tab" onclick="switchTab('finalAnimation331_Dylan\\index.html')">Dylan</div>
-    <div class="tab" onclick="switchTab('David\\index.html')">David</div>
-    <div class="tab" onclick="switchTab('Riggs\\index.html')">Riggs</div>
+    <div class="tab" onclick="switchTab('home')">Home</div>
+    <div class="tab" onclick="switchTab('finalAnimation331/index.html')">Victoria</div>
+    <div class="tab" onclick="switchTab('finalAnimation331_Dylan/index.html')">Dylan</div>
+    <div class="tab" onclick="switchTab('David/index.html')">David</div>
+    <div class="tab" onclick="switchTab('Riggs/index.html')">Riggs</div>
+    <div class="tab" onclick="switchTab('slides')">Slides</div>
   </div>
-  <iframe id="content" src="finalAnimation331\\index.html"></iframe>
+  <iframe id="content" src=""></iframe>
 
   <script>
     function switchTab(path) {
-      document.getElementById('content').src = path;
+      const iframe = document.getElementById('content');
+      if (path === 'home') {
+        iframe.src = '';
+        iframe.style.display = 'none';
+        document.body.innerHTML += '<h1 style="text-align: center; margin-top: 50px;">Welcome to the Multi-Repo Project!</h1>';
+      } else if (path === 'slides') {
+        iframe.style.display = 'block';
+        iframe.src = "https://docs.google.com/presentation/d/e/2PACX-1vR1234YOURSLIDEID123/embed?start=false&loop=false&delayms=3000";
+      } else {
+        iframe.style.display = 'block';
+        iframe.src = path;
+      }
     }
+    // Set default tab to Home
+    switchTab('home');
   </script>
 </body>
 </html>
