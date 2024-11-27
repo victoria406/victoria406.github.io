@@ -1,0 +1,55 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #6b2cc4, #c42ca2);
+    color: white;
+}
+  
+  /* Login Container Styling */
+#login-container {
+    text-align: center;
+}
+  
+  /* Inputs and Button Styling */
+input, button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+  
+  /* Button-Specific Styling */
+button {
+    background: white;
+    color: #6b2cc4;
+    font-weight: bold;
+    cursor: pointer;
+}
+  
+#logo {
+    max-width: 150px; /* Adjust the size of your logo */
+    margin-bottom: 20px; /* Add some space below the logo */
+}
+  
+#cat-animation {
+    position: relative;
+    width: 200px; /* Constrain the animation container size */
+    height: 200px; /* Adjust this if needed */
+    margin: 0 auto; /* Center the container */
+}
+
+#cat, #locust {
+    position: absolute;
+    width: 50px; /* Adjust the size of the cat */
+    height: 50px; /* Adjust the size of the locust */
+}
+
+.hidden {
+    display: none; /* This hides the element */
+}
