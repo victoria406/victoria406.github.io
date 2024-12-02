@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #add8e6; /* Light blue */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    justify-content: center;
+}
+
+/* Shape Selector Container */
+.shape-selector-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 15px;
+    background-color: rgba(173, 216, 230, 0.8); /* Light blue background */
+    border-radius: 15px; /* Rounded edges to match other buttons */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+/* Shape Option Buttons */
+.shape-option {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    border-radius: 10px; /* Rounded edges for consistency */
+}
+
+.shape-option:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5); /* More pronounced glow on hover */
+}
+
+.shape-option.circle {
+    background-color: #ff9999;
+    clip-path: circle();
+}
+
+.shape-option.star {
+    background-color: #99ff99;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.shape-option.square {
+    background-color: #9999ff;
+    clip-path: inset(0); /* Correct square clip-path */
+}
+
+.shape-option.triangle {
+    background-color: #ffcc99;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.shape-option.diamond {
+    background-color: #99ccff;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+
+/* Main Shape Section */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-shape {
+    width: 150px;
+    height: 150px;
+    background-color: #ff6347; /* Tomato red */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    clip-path: circle(); /* Default to a circle */
+    transition: clip-path 0.3s, transform 0.3s;
+    border: 5px solid transparent; /* Initial transparent border */
+    box-sizing: border-box; /* Ensures border size is included */
+}
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+    background-color: rgba(173, 216, 230, 0.8); /* Light blue background */
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 20px;
+}
+
+/* Grid Container for Buttons */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Animation Buttons */
+.box {
+    width: 100px;
+    height: 100px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Icons */
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 5px black;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.box:nth-child(1) { background-color: #ff9999; }
+.box:nth-child(2) { background-color: #99ff99; }
+.box:nth-child(3) { background-color: #ffff99; }
+.box:nth-child(4) { background-color: #9999ff; }
+.box:nth-child(5) { background-color: #ffcc99; }
+.box:nth-child(6) { background-color: #99ccff; }
+.box:nth-child(7) { background-color: #ccffcc; }
+.box:nth-child(8) { background-color: #ccffff; }
+.box:nth-child(9) { background-color: #ffccff; }
+
+.box:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    filter: brightness(110%); /* Darkens the original color for hover effect */
+}
